@@ -17,11 +17,11 @@
             try {
                 bluetoothDevice = await navigator.bluetooth.requestDevice({
                     filters: [{ name: "Pico LED Controller" }],
-                    optionalServices: ["12345678-1234-5678-1234-56789abcdef0"]
+                    optionalServices: ["29e44d40-d81f-460c-bff6-8e3107e38ac6"]
                 });
                 const server = await bluetoothDevice.gatt.connect();
-                const service = await server.getPrimaryService("12345678-1234-5678-1234-56789abcdef0");
-                characteristic = await service.getCharacteristic("87654321-4321-6789-4321-abcdef123456");
+                const service = await server.getPrimaryService("29e44d40-d81f-460c-bff6-8e3107e38ac6");
+                characteristic = await service.getCharacteristic("83c8498d-b0f6-48f3-90d7-f61153f8439c");
                 alert("Connected to Pico!");
             } catch (error) {
                 console.error(error);
